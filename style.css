@@ -20,3 +20,7 @@
 .w3-para{
     text-align: justify;
 }
+.warning-msg{
+    font-size: small;
+    color:darkred;
+}

@@ -303,11 +303,14 @@ body, html {
     <br>
     <form action="#">
       <p><input class="w3-input w3-border" type="text" id="name" placeholder="Name" required name="Name"></p>
+      <p class="warning-msg" id="name-warning" hidden>*Please enter a valid name!</p>
       <p><input class="w3-input w3-border" type="text" id="email" placeholder="Email" required name="Email"></p>
       <p><input class="w3-input w3-border" type="number" id="number" placeholder="Contact Number" required name="Mobile Number"></p>
+      <p class="warning-msg" id="number-warning" hidden>*Please enter a valid 10 digit contact number without spaces!</p>
       <textarea class="w3-input w3-border" placeholder="Message" required name="Message" id="message" rows="4" cols="50"></textarea>
+      <p class="warning-msg" id="message-warning" hidden>*Please give a brief description of your requirements!</p>
       <p>
-        <button class="w3-button w3-black" onclick="sendMail()" type="button">
+        <button class="w3-button w3-black" onclick="sendMail()" type="button" id="send-message" disabled>
           <i class="fa fa-paper-plane"></i> SEND MESSAGE
         </button>
       </p>
@@ -356,6 +359,67 @@ function w3_open() {
 function w3_close() {
     mySidebar.style.display = "none";
 }
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+<script>
+  $(document).ready(function(){
+    $("#name").keyup(function(){
+      if(checkValidInput()) $("#send-message").attr("disabled", false);
+      else $("#send-message").attr("disabled", true);
+    });
+    $("#number").keyup(function(){
+      if(checkValidInput()) $("#send-message").attr("disabled", false);
+      else $("#send-message").attr("disabled", true);
+    });
+    $("#message").keyup(function(){
+      if(checkValidInput()) $("#send-message").attr("disabled", false);
+      else $("#send-message").attr("disabled", true);
+    });
+  });
+
+  function checkValidInput(){
+
+    var nameLength = document.getElementById("name").value.length;
+    var numberLength = document.getElementById("number").value.length;
+    var messageLength = document.getElementById("message").value.length;
+
+    // If user clears everything, hide all warnings
+    if(nameLength == 0 && numberLength == 0 && messageLength == 0){
+      document.getElementById("name-warning").setAttribute("hidden", true);
+      document.getElementById("number-warning").setAttribute("hidden", true);
+      document.getElementById("message-warning").setAttribute("hidden", true);
+      return false;
+    }
+
+    // Name warning
+    if(nameLength < 3){
+      document.getElementById("name-warning").removeAttribute("hidden");
+      return false;
+    }
+    else{
+      document.getElementById("name-warning").setAttribute("hidden", true);
+    }
+    // Number warning
+    if(numberLength != 10){
+      document.getElementById("number-warning").removeAttribute("hidden");
+      return false;
+    }
+    else{
+      document.getElementById("number-warning").setAttribute("hidden", true);
+    }
+    // Message warning
+    if(messageLength < 20){
+      document.getElementById("message-warning").removeAttribute("hidden");
+      return false;
+    }
+    else{
+      document.getElementById("message-warning").setAttribute("hidden", true);
+    }
+
+    return true;
+  }
 </script>
 
 </body>
