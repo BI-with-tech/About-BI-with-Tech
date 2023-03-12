@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>[BI with Tech] - Saloon Pricing</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../style.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+body, html {
+  height: 100%;
+  line-height: 1.8;
+}
+
+/* Full height image header */
+.bgimg-1 {
+  background-position: center;
+  background-size: cover;
+  background-image: url("../src/images/top-banner.jpeg");
+  min-height: 100%;
+}
+
+.w3-bar .w3-button {
+  padding: 16px;
+}
+</style>
+<script src="index.js"></script>
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("MC8Havkg26fdas8WT");
+   })();
+</script>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+      <img src="../src/images/BWT Logo.png" class="logo-png" alt="BWT Logo">
+  </div>
+</div>
+
+
+<!-- Pricing Section -->
+<div class="w3-container w3-center w3-dark-grey" style="padding:80px 16px" id="pricing">
+    <h3>PRICING - APPOINTMENT SYSTEM</h3>
+    <p class="w3-large">Choose a pricing plan that fits your needs.</p>
+    <div class="w3-row-padding" style="margin-top:64px">
+      <div class="w3-third w3-section">
+        <ul class="w3-ul w3-white w3-hover-shadow">
+          <li class="w3-xlarge w3-padding-32" style="background-color: #1eb885; color: white;">Silver</li>
+          <li class="w3-padding-16"><b>No</b> Customization</li>
+          <li class="w3-padding-16"><b>Appointments</b> Reject/Accept</li>
+          <li class="w3-padding-16"><b>No</b> Reminder</li>
+          <li class="w3-padding-16">Customize <b>Holidays/Working Hours</b></li>
+          <li class="w3-padding-16"><b>One time</b> Deployment</li>
+          <li class="w3-padding-16"><b>No</b> Support*</li>
+          <li class="w3-padding-16">
+            <h2 class="w3-wide">20,000 INR</h2>
+            <span class="w3-opacity">*Basic support can be availed at 300 INR per month</span>
+          </li>
+        </ul>
+      </div>
+      <div class="w3-third w3-section">
+        <ul class="w3-ul w3-white w3-hover-shadow">
+          <li class="w3-xlarge w3-padding-32" style="background-color: #3a9ca9; color: white;">Gold</li>
+          <li class="w3-padding-16"><b>Basic</b> Customization*</li>
+          <li class="w3-padding-16"><b>Admin Panel</b> with dynamic control</li>
+          <li class="w3-padding-16"><b>Reminders</b> Emails and Texts</li>
+          <li class="w3-padding-16"><b>Testimonials</b> by users</li>
+          <li class="w3-padding-16"><b>2 revisions</b> of WebApp</li>
+          <li class="w3-padding-16"><b>2 Months</b> Free Support (costs ~ 1000)</li>
+          <li class="w3-padding-16">
+            <h2 class="w3-wide">40,000 INR</h2>
+            <span class="w3-opacity">*5 photos, 1 video, logo, slogan, theme color, upto 5 webpages</span>
+          </li>
+        </ul>
+      </div>
+      <div class="w3-third w3-section">
+        <ul class="w3-ul w3-white w3-hover-shadow">
+          <li class="w3-xlarge w3-padding-32" style="background-color: #d55b19; color: white;" >Platinum</li>
+          <li class="w3-padding-16"><b>Advanced</b> Customization</li>
+          <li class="w3-padding-16"><b>Advanced</b> Admin Panel</li>
+          <li class="w3-padding-16"><b>WhatsApp</b> Confirmation</li>
+          <li class="w3-padding-16"><b>Payment Option</b> in Appointments</li>
+          <li class="w3-padding-16"><b>5 revisions</b> of WebApp</li>
+          <li class="w3-padding-16"><b>6 Months</b> Free Support (costs ~4200)</li>
+          <li class="w3-padding-16">
+            <h2 class="w3-wide">65,000 INR**</h2>
+            <span class="w3-opacity">** Starts from 65 K (All additional features may cost extra charges)</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>  
+
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+</script>
+
+
+</body>
+</html>
